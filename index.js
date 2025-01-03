@@ -16,7 +16,7 @@ form.addEventListener('submit', (e) => {
 async function omdbApi(query) {
     try {
 
-        const req = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=2b2fed5b&s=${query}`);
+        const req = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=2b2fed5b&s=${query}`);
 
         const movies = await req.json();
 
@@ -74,7 +74,7 @@ function displayMovieDetails(movies) {
         movieCard.appendChild(title);
         movieCard.appendChild(year);
 
-        fetch(`http://www.omdbapi.com/?apikey=2b2fed5b&i=${movie.imdbID}`)
+        fetch(`https://www.omdbapi.com/?apikey=2b2fed5b&i=${movie.imdbID}`)
             .then((response) => response.json())
             .then((movieDetails) => {
                 if (movieDetails.Response === "True") {
